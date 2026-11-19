@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erakondade reitingud küsitlusperioodil 9.–18. november 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+  }
+  html, body {
+    background: #ffffff;
+    color: #111111;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+  }
+  .chart-wrap {
+    width: 100%;
+    max-width: 670px;
+    max-height: 665px;
+    margin: 0 auto;
+    padding: 16px 14px 12px 14px;
+    position: relative;
+  }
+  .chart-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .chart-title {
+    font-size: 20px;
+    line-height: 1.25;
+    color: #111111;
+    font-weight: 400;
+  }
+  .chart-legend {
+    font-size: 14px;
+    color: #4A4A4A;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .rows {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  .party-name {
+    width: 125px;
+    min-width: 125px;
+    padding-right: 12px;
+    text-align: right;
+    font-size: 16px;
+    line-height: 1;
+    color: #111111;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .bar-track {
+    position: relative;
+    flex: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .bar-fill {
+    position: relative;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.14s ease;
+  }
+  .bar-fill:hover {
+    opacity: 0.88;
+  }
+  .val-inside {
+    padding-left: 8px;
+    font-size: 15px;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    font-weight: 400;
+  }
+  .val-outside {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    font-weight: 400;
+  }
+  .err-bar {
+    position: absolute;
+    top: 50%;
+    height: 18px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3;
+  }
+  .err-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    margin-top: -1px;
+    background: #4A4A4A;
+    pointer-events: none;
+  }
+  .err-cap {
+    position: absolute;
+    top: 50%;
+    width: 2px;
+    height: 12px;
+    margin-top: -6px;
+    background: #4A4A4A;
+    pointer-events: none;
+  }
+  .err-cap-l { left: 0; }
+  .err-cap-r { right: 0; }
+  .err-dot {
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    margin-top: -3.5px;
+    margin-left: -3.5px;
+    border-radius: 50%;
+    background: #4A4A4A;
+    pointer-events: none;
+  }
+  .chart-footer {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #555555;
+    font-weight: 400;
+  }
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.97);
+    color: #111111;
+    border: 1px solid #d1d5db;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+  }
+  .tooltip.dark {
+    background: rgba(24, 24, 27, 0.95);
+    color: #ffffff;
+    border-color: rgba(24, 24, 27, 0.95);
+  }
+  .tooltip.visible { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="chart-wrap">
+  <div class="chart-header">
+    <div class="chart-title">Erakondade reitingud küsitlusperioodil 9.&ndash;18. november 2026</div>
+    <div class="chart-legend">|--●--| - veapiir</div>
+  </div>
+  <div class="rows">
+    <div class="row">
+      <div class="party-name">Keskerakond</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:79.845%;background:#027D2B;" data-tip="Keskerakond: 24,7%">
+          <span class="val-inside" style="color:#FFFFFF;">24,7%</span>
+        </div>
+        <div class="err-bar" style="left:72.733%;width:14.223%;" data-err-tip="± 2,2%" aria-label="± 2,2%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">SDE</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:66.268%;background:#CE1126;" data-tip="SDE: 20,5%">
+          <span class="val-inside" style="color:#FFFFFF;">20,5%</span>
+        </div>
+        <div class="err-bar" style="left:59.480%;width:13.577%;" data-err-tip="± 2,1%" aria-label="± 2,1%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">Isamaa</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:61.096%;background:#009DE0;" data-tip="Isamaa: 18,9%">
+          <span class="val-inside" style="color:#FFFFFF;">18,9%</span>
+        </div>
+        <div class="err-bar" style="left:54.631%;width:12.930%;" data-err-tip="± 2,0%" aria-label="± 2,0%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">EKRE</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:44.610%;background:#2139B5;" data-tip="EKRE: 13,8%">
+          <span class="val-inside" style="color:#FFFFFF;">13,8%</span>
+        </div>
+        <div class="err-bar" style="left:38.791%;width:11.637%;" data-err-tip="± 1,8%" aria-label="± 1,8%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">Reformierakond</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:35.235%;background:#FFDC00;" data-tip="Reformierakond: 10,9%">
+          <span class="val-inside" style="color:#111111;">10,9%</span>
+        </div>
+        <div class="err-bar" style="left:30.063%;width:10.344%;" data-err-tip="± 1,6%" aria-label="± 1,6%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">Parempoolsed</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:17.779%;background:#ff6100;" data-tip="Parempoolsed: 5,5%">
+          <span class="val-inside" style="color:#111111;">5,5%</span>
+        </div>
+        <div class="err-bar" style="left:13.900%;width:7.758%;" data-err-tip="± 1,2%" aria-label="± 1,2%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">ERK</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:5.172%;background:#000000;" data-tip="ERK: 1,6%">
+          
+        </div>
+        <div class="err-bar" style="left:3.233%;width:3.879%;" data-err-tip="± 0,6%" aria-label="± 0,6%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        <span class="val-outside" style="left:calc(7.112% + 7px);color:#111111;">1,6%</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">Eesti 200</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:4.849%;background:#00C0C9;" data-tip="Eesti 200: 1,5%">
+          
+        </div>
+        <div class="err-bar" style="left:2.909%;width:3.879%;" data-err-tip="± 0,6%" aria-label="± 0,6%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        <span class="val-outside" style="left:calc(6.788% + 7px);color:#111111;">1,5%</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">Rohelised</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:4.526%;background:#60BE19;" data-tip="Rohelised: 1,4%">
+          
+        </div>
+        <div class="err-bar" style="left:2.586%;width:3.879%;" data-err-tip="± 0,6%" aria-label="± 0,6%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        <span class="val-outside" style="left:calc(6.465% + 7px);color:#111111;">1,4%</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="party-name">KOOS</div>
+      <div class="bar-track">
+        <div class="bar-fill" style="width:3.556%;background:#dc5356;" data-tip="KOOS: 1,1%">
+          
+        </div>
+        <div class="err-bar" style="left:1.940%;width:3.233%;" data-err-tip="± 0,5%" aria-label="± 0,5%">
+          <span class="err-cap err-cap-l"></span>
+          <span class="err-line"></span>
+          <span class="err-dot" style="left:50.00%;"></span>
+          <span class="err-cap err-cap-r"></span>
+        </div>
+        <span class="val-outside" style="left:calc(5.172% + 7px);color:#111111;">1,1%</span>
+      </div>
+    </div>
+  </div>
+  <div class="chart-footer">
+    <div>Graafika: Mirjam Mäekivi</div>
+    <div>Allikas: Emor</div>
+  </div>
+</div>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script>
+(function () {
+  var tip = document.getElementById('tooltip');
+  function moveTip(e) {
+    var pad = 12;
+    var tw = tip.offsetWidth;
+    var th = tip.offsetHeight;
+    var x = e.clientX + pad;
+    var y = e.clientY - th - 10;
+    if (x + tw > window.innerWidth - 8) x = e.clientX - tw - pad;
+    if (y < 8) y = e.clientY + 14;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+  document.querySelectorAll('.bar-fill').forEach(function (el) {
+    el.addEventListener('mouseenter', function (e) {
+      tip.classList.remove('dark');
+      tip.textContent = el.getAttribute('data-tip');
+      tip.classList.add('visible');
+      moveTip(e);
+    });
+    el.addEventListener('mousemove', moveTip);
+    el.addEventListener('mouseleave', function () {
+      tip.classList.remove('visible');
+    });
+  });
+  document.querySelectorAll('.err-bar').forEach(function (el) {
+    el.addEventListener('mouseenter', function (e) {
+      e.stopPropagation();
+      tip.classList.add('dark');
+      tip.textContent = el.getAttribute('data-err-tip');
+      tip.classList.add('visible');
+      moveTip(e);
+    });
+    el.addEventListener('mousemove', function (e) {
+      e.stopPropagation();
+      moveTip(e);
+    });
+    el.addEventListener('mouseleave', function (e) {
+      e.stopPropagation();
+      tip.classList.remove('visible');
+      tip.classList.remove('dark');
+    });
+  });
+})();
+</script>
+</body>
+</html>
