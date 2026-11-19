@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erakondade toetused septembris, oktoobris ja novembris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #ffffff;
+    color: #111111;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    overflow: hidden;
+  }
+  .chart-wrap {
+    width: 100%;
+    max-width: 670px;
+    max-height: 440px;
+    margin: 0 auto;
+    padding: 14px 12px 10px 12px;
+    position: relative;
+  }
+  .chart-title {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  .chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+  .bar-group { cursor: pointer; }
+  .bar-rect { transition: opacity 0.15s ease; }
+  .bar-group:hover .bar-rect { opacity: 0.82; }
+  .chart-footer {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666666;
+    font-weight: 400;
+  }
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(17, 24, 39, 0.94);
+    color: #ffffff;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 5px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  }
+  .tooltip.visible { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="chart-wrap">
+  <div class="chart-title">Erakondade toetused <span style="color:#8fd0f2;font-weight:700">septembris</span>, <span style="color:#2b8ec2;font-weight:700">oktoobris</span> ja <span style="color:#064d73;font-weight:700">novembris</span></div>
+  <svg class="chart-svg" viewBox="0 0 650 305" role="img" aria-label="Erakondade toetused septembris, oktoobris ja novembris">
+    <line x1="36" y1="212.00" x2="642" y2="212.00" stroke="#cbd5e1" stroke-width="1"/><text x="30" y="216.00" text-anchor="end" font-size="12" fill="#555555">0</text><line x1="36" y1="149.33" x2="642" y2="149.33" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="153.33" text-anchor="end" font-size="12" fill="#555555">10</text><line x1="36" y1="86.67" x2="642" y2="86.67" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="90.67" text-anchor="end" font-size="12" fill="#555555">20</text><line x1="36" y1="24.00" x2="642" y2="24.00" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="28.00" text-anchor="end" font-size="12" fill="#555555">30</text><text x="30" y="13" text-anchor="end" font-size="12" fill="#555555">%</text>
+    <g class="bar-group" data-tip="Keskerakond (september): 17%"><rect class="bar-rect" x="44.0" y="105.47" width="21" height="106.53" fill="#8fd0f2" rx="1" ry="1"/><text x="58.5" y="206.00" transform="rotate(-90 58.5 206.00)" text-anchor="start" font-size="12" fill="#111111" pointer-events="none">17%</text></g><g class="bar-group" data-tip="Keskerakond (oktoober): 21%"><rect class="bar-rect" x="68.0" y="80.40" width="21" height="131.60" fill="#2b8ec2" rx="1" ry="1"/><text x="82.5" y="206.00" transform="rotate(-90 82.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">21%</text></g><g class="bar-group" data-tip="Keskerakond (november): 25%"><rect class="bar-rect" x="92.0" y="55.33" width="21" height="156.67" fill="#064d73" rx="1" ry="1"/><text x="106.5" y="206.00" transform="rotate(-90 106.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">25%</text></g><text x="78.5" y="224.0" transform="rotate(-42 78.5 224.0)" text-anchor="end" font-size="13" fill="#222222">Keskerakond</text><g class="bar-group" data-tip="SDE (september): 17%"><rect class="bar-rect" x="130.0" y="105.47" width="21" height="106.53" fill="#8fd0f2" rx="1" ry="1"/><text x="144.5" y="206.00" transform="rotate(-90 144.5 206.00)" text-anchor="start" font-size="12" fill="#111111" pointer-events="none">17%</text></g><g class="bar-group" data-tip="SDE (oktoober): 20%"><rect class="bar-rect" x="154.0" y="86.67" width="21" height="125.33" fill="#2b8ec2" rx="1" ry="1"/><text x="168.5" y="206.00" transform="rotate(-90 168.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">20%</text></g><g class="bar-group" data-tip="SDE (november): 21%"><rect class="bar-rect" x="178.0" y="80.40" width="21" height="131.60" fill="#064d73" rx="1" ry="1"/><text x="192.5" y="206.00" transform="rotate(-90 192.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">21%</text></g><text x="164.5" y="224.0" transform="rotate(-42 164.5 224.0)" text-anchor="end" font-size="13" fill="#222222">SDE</text><g class="bar-group" data-tip="Isamaa (september): 24%"><rect class="bar-rect" x="216.0" y="61.60" width="21" height="150.40" fill="#8fd0f2" rx="1" ry="1"/><text x="230.5" y="206.00" transform="rotate(-90 230.5 206.00)" text-anchor="start" font-size="12" fill="#111111" pointer-events="none">24%</text></g><g class="bar-group" data-tip="Isamaa (oktoober): 19%"><rect class="bar-rect" x="240.0" y="92.93" width="21" height="119.07" fill="#2b8ec2" rx="1" ry="1"/><text x="254.5" y="206.00" transform="rotate(-90 254.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">19%</text></g><g class="bar-group" data-tip="Isamaa (november): 19%"><rect class="bar-rect" x="264.0" y="92.93" width="21" height="119.07" fill="#064d73" rx="1" ry="1"/><text x="278.5" y="206.00" transform="rotate(-90 278.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">19%</text></g><text x="250.5" y="224.0" transform="rotate(-42 250.5 224.0)" text-anchor="end" font-size="13" fill="#222222">Isamaa</text><g class="bar-group" data-tip="EKRE (september): 13%"><rect class="bar-rect" x="302.0" y="130.53" width="21" height="81.47" fill="#8fd0f2" rx="1" ry="1"/><text x="316.5" y="206.00" transform="rotate(-90 316.5 206.00)" text-anchor="start" font-size="12" fill="#111111" pointer-events="none">13%</text></g><g class="bar-group" data-tip="EKRE (oktoober): 14%"><rect class="bar-rect" x="326.0" y="124.27" width="21" height="87.73" fill="#2b8ec2" rx="1" ry="1"/><text x="340.5" y="206.00" transform="rotate(-90 340.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">14%</text></g><g class="bar-group" data-tip="EKRE (november): 14%"><rect class="bar-rect" x="350.0" y="124.27" width="21" height="87.73" fill="#064d73" rx="1" ry="1"/><text x="364.5" y="206.00" transform="rotate(-90 364.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">14%</text></g><text x="336.5" y="224.0" transform="rotate(-42 336.5 224.0)" text-anchor="end" font-size="13" fill="#222222">EKRE</text><g class="bar-group" data-tip="Reformierakond (september): 15%"><rect class="bar-rect" x="388.0" y="118.00" width="21" height="94.00" fill="#8fd0f2" rx="1" ry="1"/><text x="402.5" y="206.00" transform="rotate(-90 402.5 206.00)" text-anchor="start" font-size="12" fill="#111111" pointer-events="none">15%</text></g><g class="bar-group" data-tip="Reformierakond (oktoober): 14%"><rect class="bar-rect" x="412.0" y="124.27" width="21" height="87.73" fill="#2b8ec2" rx="1" ry="1"/><text x="426.5" y="206.00" transform="rotate(-90 426.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">14%</text></g><g class="bar-group" data-tip="Reformierakond (november): 11%"><rect class="bar-rect" x="436.0" y="143.07" width="21" height="68.93" fill="#064d73" rx="1" ry="1"/><text x="450.5" y="206.00" transform="rotate(-90 450.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">11%</text></g><text x="422.5" y="224.0" transform="rotate(-42 422.5 224.0)" text-anchor="end" font-size="13" fill="#222222">Reformierakond</text><g class="bar-group" data-tip="Parempoolsed (september): 10%"><rect class="bar-rect" x="474.0" y="149.33" width="21" height="62.67" fill="#8fd0f2" rx="1" ry="1"/><text x="488.5" y="206.00" transform="rotate(-90 488.5 206.00)" text-anchor="start" font-size="12" fill="#111111" pointer-events="none">10%</text></g><g class="bar-group" data-tip="Parempoolsed (oktoober): 7%"><rect class="bar-rect" x="498.0" y="168.13" width="21" height="43.87" fill="#2b8ec2" rx="1" ry="1"/><text x="512.5" y="206.00" transform="rotate(-90 512.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">7%</text></g><g class="bar-group" data-tip="Parempoolsed (november): 6%"><rect class="bar-rect" x="522.0" y="174.40" width="21" height="37.60" fill="#064d73" rx="1" ry="1"/><text x="536.5" y="206.00" transform="rotate(-90 536.5 206.00)" text-anchor="start" font-size="12" fill="#ffffff" pointer-events="none">6%</text></g><text x="508.5" y="224.0" transform="rotate(-42 508.5 224.0)" text-anchor="end" font-size="13" fill="#222222">Parempoolsed</text><g class="bar-group" data-tip="Eesti 200 (september): 2%"><rect class="bar-rect" x="560.0" y="199.47" width="21" height="12.53" fill="#8fd0f2" rx="1" ry="1"/><text x="570.5" y="194.47" text-anchor="middle" font-size="11.5" fill="#111111" pointer-events="none">2%</text></g><g class="bar-group" data-tip="Eesti 200 (oktoober): 2%"><rect class="bar-rect" x="584.0" y="199.47" width="21" height="12.53" fill="#2b8ec2" rx="1" ry="1"/><text x="594.5" y="194.47" text-anchor="middle" font-size="11.5" fill="#111111" pointer-events="none">2%</text></g><g class="bar-group" data-tip="Eesti 200 (november): 2%"><rect class="bar-rect" x="608.0" y="199.47" width="21" height="12.53" fill="#064d73" rx="1" ry="1"/><text x="618.5" y="194.47" text-anchor="middle" font-size="11.5" fill="#111111" pointer-events="none">2%</text></g><text x="594.5" y="224.0" transform="rotate(-42 594.5 224.0)" text-anchor="end" font-size="13" fill="#222222">Eesti 200</text>
+  </svg>
+  <div class="chart-footer">Andmed: Emor</div>
+</div>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script>
+(function () {
+  var tip = document.getElementById('tooltip');
+  var groups = document.querySelectorAll('.bar-group');
+  function moveTip(e) {
+    var pad = 12;
+    var tw = tip.offsetWidth;
+    var th = tip.offsetHeight;
+    var x = e.clientX + pad;
+    var y = e.clientY - th - 10;
+    if (x + tw > window.innerWidth - 8) x = e.clientX - tw - pad;
+    if (y < 8) y = e.clientY + 14;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+  groups.forEach(function (g) {
+    g.addEventListener('mouseenter', function (e) {
+      tip.textContent = g.getAttribute('data-tip');
+      tip.classList.add('visible');
+      moveTip(e);
+    });
+    g.addEventListener('mousemove', moveTip);
+    g.addEventListener('mouseleave', function () {
+      tip.classList.remove('visible');
+    });
+  });
+})();
+</script>
+</body>
+</html>
