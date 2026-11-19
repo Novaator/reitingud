@@ -1,1 +1,105 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Party ratings including don't know answers, November 9–18, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #ffffff;
+    color: #111111;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    overflow: hidden;
+  }
+  .chart-wrap {
+    width: 100%;
+    max-width: 670px;
+    margin: 0 auto;
+    padding: 14px 12px 10px 12px;
+    position: relative;
+  }
+  .chart-title {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 8px;
+  }
+  .chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+  .bar-group { cursor: pointer; }
+  .bar-shape { transition: opacity 0.15s ease; }
+  .bar-group:hover .bar-shape { opacity: 0.85; }
+  .chart-footer {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666666;
+    font-weight: 400;
+  }
+  .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(17, 24, 39, 0.94);
+    color: #ffffff;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 5px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    z-index: 999;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  }
+  .tooltip.visible { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="chart-wrap">
+  <div class="chart-title">Party ratings including don't know answers, November 9&ndash;18, 2026</div>
+  <svg class="chart-svg" viewBox="0 0 650 315" role="img" aria-label="Party ratings including don't know answers, November 9–18, 2026">
+    <line x1="36" y1="222.00" x2="640" y2="222.00" stroke="#cbd5e1" stroke-width="1"/><text x="30" y="226.00" text-anchor="end" font-size="12" fill="#555555">0</text><line x1="36" y1="158.67" x2="640" y2="158.67" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="162.67" text-anchor="end" font-size="12" fill="#555555">10</text><line x1="36" y1="95.33" x2="640" y2="95.33" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="99.33" text-anchor="end" font-size="12" fill="#555555">20</text><line x1="36" y1="32.00" x2="640" y2="32.00" stroke="#e5e7eb" stroke-width="1"/><text x="30" y="36.00" text-anchor="end" font-size="12" fill="#555555">30</text><text x="30" y="16" text-anchor="end" font-size="12" fill="#555555">%</text>
+    <g class="bar-group" data-tip="Center Party: 18%"><path class="bar-shape" d="M 59.0,222 L 59.0,111.00 Q 59.0,108.00 62.0,108.00 L 100.0,108.00 Q 103.0,108.00 103.0,111.00 L 103.0,222 Z" fill="#027D2B"/><text x="81.0" y="102.00" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">18%</text></g><text x="81.0" y="234.0" transform="rotate(-45 81.0 234.0)" text-anchor="end" font-size="13" fill="#222222">Center Party</text><g class="bar-group" data-tip="Social Democratic Party: 14%"><path class="bar-shape" d="M 133.0,222 L 133.0,136.33 Q 133.0,133.33 136.0,133.33 L 174.0,133.33 Q 177.0,133.33 177.0,136.33 L 177.0,222 Z" fill="#CE1126"/><text x="155.0" y="127.33" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">14%</text></g><text x="155.0" y="234.0" transform="rotate(-45 155.0 234.0)" text-anchor="end" font-size="13" fill="#222222">SDE</text><g class="bar-group" data-tip="Isamaa: 13%"><path class="bar-shape" d="M 207.0,222 L 207.0,142.67 Q 207.0,139.67 210.0,139.67 L 248.0,139.67 Q 251.0,139.67 251.0,142.67 L 251.0,222 Z" fill="#009DE0"/><text x="229.0" y="133.67" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">13%</text></g><text x="229.0" y="234.0" transform="rotate(-45 229.0 234.0)" text-anchor="end" font-size="13" fill="#222222">Isamaa</text><g class="bar-group" data-tip="Conservative People's Party: 10%"><path class="bar-shape" d="M 281.0,222 L 281.0,161.67 Q 281.0,158.67 284.0,158.67 L 322.0,158.67 Q 325.0,158.67 325.0,161.67 L 325.0,222 Z" fill="#2139B5"/><text x="303.0" y="152.67" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">10%</text></g><text x="303.0" y="234.0" transform="rotate(-45 303.0 234.0)" text-anchor="end" font-size="13" fill="#222222">EKRE</text><g class="bar-group" data-tip="Reform Party: 8%"><path class="bar-shape" d="M 355.0,222 L 355.0,174.33 Q 355.0,171.33 358.0,171.33 L 396.0,171.33 Q 399.0,171.33 399.0,174.33 L 399.0,222 Z" fill="#FFDC00"/><text x="377.0" y="165.33" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">8%</text></g><text x="377.0" y="234.0" transform="rotate(-45 377.0 234.0)" text-anchor="end" font-size="13" fill="#222222">Reform Party</text><g class="bar-group" data-tip="Parempoolsed: 4%"><path class="bar-shape" d="M 429.0,222 L 429.0,199.67 Q 429.0,196.67 432.0,196.67 L 470.0,196.67 Q 473.0,196.67 473.0,199.67 L 473.0,222 Z" fill="#ff6100"/><text x="451.0" y="190.67" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">4%</text></g><text x="451.0" y="234.0" transform="rotate(-45 451.0 234.0)" text-anchor="end" font-size="13" fill="#222222">Parempoolsed</text><g class="bar-group" data-tip="Eesti 200: 1%"><path class="bar-shape" d="M 503.0,222 L 503.0,218.67 Q 503.0,215.67 506.0,215.67 L 544.0,215.67 Q 547.0,215.67 547.0,218.67 L 547.0,222 Z" fill="#5fb7e5"/><text x="525.0" y="209.67" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">1%</text></g><text x="525.0" y="234.0" transform="rotate(-45 525.0 234.0)" text-anchor="end" font-size="13" fill="#222222">Eesti 200</text><g class="bar-group" data-tip="Don't know: 30%"><path class="bar-shape" d="M 577.0,222 L 577.0,35.00 Q 577.0,32.00 580.0,32.00 L 618.0,32.00 Q 621.0,32.00 621.0,35.00 L 621.0,222 Z" fill="#141312"/><text x="599.0" y="26.00" text-anchor="middle" font-size="13" font-weight="700" fill="#111111" pointer-events="none">30%</text></g><text x="599.0" y="234.0" transform="rotate(-45 599.0 234.0)" text-anchor="end" font-size="13" fill="#222222">Don't know</text>
+  </svg>
+  <div class="chart-footer">Source: Emor</div>
+</div>
+<div id="tooltip" class="tooltip" role="status" aria-live="polite"></div>
+<script>
+(function () {
+  var tip = document.getElementById('tooltip');
+  var groups = document.querySelectorAll('.bar-group');
+  function moveTip(e) {
+    var pad = 12;
+    var tw = tip.offsetWidth;
+    var th = tip.offsetHeight;
+    var x = e.clientX + pad;
+    var y = e.clientY - th - 10;
+    if (x + tw > window.innerWidth - 8) x = e.clientX - tw - pad;
+    if (y < 8) y = e.clientY + 14;
+    tip.style.left = x + 'px';
+    tip.style.top = y + 'px';
+  }
+  groups.forEach(function (g) {
+    g.addEventListener('mouseenter', function (e) {
+      tip.textContent = g.getAttribute('data-tip');
+      tip.classList.add('visible');
+      moveTip(e);
+    });
+    g.addEventListener('mousemove', moveTip);
+    g.addEventListener('mouseleave', function () {
+      tip.classList.remove('visible');
+    });
+  });
+})();
+</script>
+</body>
+</html>
